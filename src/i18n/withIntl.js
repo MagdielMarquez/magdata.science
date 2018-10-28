@@ -6,43 +6,43 @@ import { localeData } from './messages'
 addLocaleData(localeData)
 
 export default ComposedComponent => {
-  class withIntl extends Component {
-    static childContextTypes = {
-      language: PropTypes.object,
+    class withIntl extends Component {
+        static childContextTypes = {
+        language: PropTypes.object,
     }
 
-    constructor(props) {
-      super()
-      const { pageContext } = props
-      const { locale, languages, originalPath } = pageContext
+        constructor(props) {
+            super()
+            const { pageContext } = props
+            const { locale, languages, originalPath } = pageContext
 
-      this.state = {
-        language: {
-          locale,
-          languages,
-          originalPath,
-        },
-      }
+            this.state = {
+                language: {
+                locale,
+                languages,
+                originalPath,
+                },
+            }
+        }
+
+            getChildContext() {
+            const { language } = this.state
+            return {
+                language,
+            }
+        }
+
+        render() {
+            const { language } = this.state
+            const locale = language.locale || 'en'
+            const messages = require(`./messages/${locale}.js`) // eslint-disable-line
+
+            return (
+                <IntlProvider locale={locale} messages={messages}>
+                    <ComposedComponent {...this.props} />
+                </IntlProvider>
+            )
+        }
     }
-
-    getChildContext() {
-      const { language } = this.state
-      return {
-        language,
-      }
-    }
-
-    render() {
-      const { language } = this.state
-      const locale = language.locale || 'en'
-      const messages = require(`./messages/${locale}.js`) // eslint-disable-line
-
-      return (
-        <IntlProvider locale={locale} messages={messages}>
-          <ComposedComponent {...this.props} />
-        </IntlProvider>
-      )
-    }
-  }
-  return withIntl
+    return withIntl
 }

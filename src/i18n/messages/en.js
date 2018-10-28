@@ -6,5 +6,7 @@ module.exports = {
     build: 'Now go build something great.',
     welcome2: 'Welcome to page 2',
     goback: 'Go back to the homepage',
-  }
+    title_404: 'NOT FOUND',
+    description_404:'You just hit a route that doesn&#39;t exist... the sadness.'
+}
   
