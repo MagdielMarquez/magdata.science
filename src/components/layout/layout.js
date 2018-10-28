@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { injectIntl } from 'react-intl'
-import Header from './header'
+import Header from './headerSideBarMenu'
 import { initializeIcons } from '@uifabric/icons';
 initializeIcons();
 

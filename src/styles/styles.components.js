@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from '../i18n'
 
 // Header component
 export const Nav = styled.div`
@@ -21,3 +22,25 @@ export const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
 `
+//header...
+export const HeaderLayer = styled.div`
+    display: flex;
+    flex-flow: row wrap; 
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 17px 23px 10px 23px; 
+`;
+
+export const HeaderLayerBrand = styled(Link)`
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap; 
+    align-content: center;
+`;
+
+export const HeaderLayerBrandLogo = styled.img`
+    align-self:center;
+    margin-bottom: 0;
+`;
