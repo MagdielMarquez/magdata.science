@@ -1,35 +1,76 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from '../../i18n'
-import Language from './language'
+import { Panel } from 'office-ui-fabric-react/lib/Panel';
+import styled from "styled-components"
+import Headroom from 'react-headroom'
+import Logo from '../../images/magdatascience.svg'
+import { IconButton } from 'office-ui-fabric-react/lib/Button';
+import SideBarMenu from './sideBarMenu'
 
-export default ({ siteTitle }) => (
-    <div
-        style={{
-        background: 'rebeccapurple',
-        marginBottom: '1.45rem',
-        }}
-    >
-        <div
-            style={{
-                margin: '0 auto',
-                maxWidth: 960,
-                padding: '1.45rem 1.0875rem',
-            }}
-        >
-            <h1 style={{ margin: 0, display: 'inline-block' }}>
-                <Link
-                    to="/"
-                    style={{
-                        color: 'white',
-                        textDecoration: 'none',
-                    }}
+const HeaderLayer = styled.div`
+    display: flex;
+    flex-flow: row wrap; 
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 17px 23px 10px 23px; 
+`;
+
+const HeaderLayerBrand = styled(Link)`
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap; 
+    align-content: center;
+`;
+
+const HeaderLayerBrandLogo = styled.img`
+    align-self:center;
+    margin-bottom: 0;
+`;
+
+export default class Header extends Component {
+    constructor(props) {
+        super(props)
+        this.state = { showPanel: false };
+    }
+
+    _showPanel = () => {
+        this.setState({ showPanel: true });
+    };
+
+    _hidePanel = () => {
+        this.setState({ showPanel: false });
+    };
+
+    render() {
+        return (
+            <Headroom>
+                <HeaderLayer>
+                    <HeaderLayerBrand to={'/main'}>
+                        <HeaderLayerBrandLogo 
+                            src={Logo} 
+                            width={32} 
+                            height={32}
+                            alt={'MagData.Science'} >
+                        </HeaderLayerBrandLogo>
+                    </HeaderLayerBrand>
+                    {this.props.siteTitle}
+                    <IconButton
+                        iconProps={{ iconName: 'ChevronLeftEnd6' }}
+                        title="Emoji"
+                        ariaLabel="Emoji"
+                        onClick={this._showPanel} 
+                        />
+                </HeaderLayer>
+                <Panel
+                    isOpen={this.state.showPanel}
+                    isLightDismiss={true}
+                    onDismiss={this._hidePanel}
                     >
-                    {siteTitle}
-                </Link>
-            </h1>
-            <div style={{ float: 'right' }}>
-                <Language />
-            </div>
-        </div>
-    </div>
-)
+                    <SideBarMenu />
+                </Panel>
+            </Headroom>
+        )
+    }
+}
