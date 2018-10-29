@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
-import { Panel } from 'office-ui-fabric-react/lib/Panel';
-import Headroom from 'react-headroom'
-import Logo from '../../images/magdatascience.svg'
-import { IconButton } from 'office-ui-fabric-react/lib/Button';
-import {Nav} from 'office-ui-fabric-react/lib/Nav'
-import Scrollspy from 'react-scrollspy'
 import Language from './language'
-import { HeaderLayer, HeaderLayerBrand, HeaderLayerBrandLogo } from '../../styles/styles.components'
+import Headroom from 'react-headroom'
+import Scrollspy from 'react-scrollspy'
+import Logo from '../../images/magdatascience.svg'
+import { Nav } from 'office-ui-fabric-react/lib/Nav'
+import { Panel } from 'office-ui-fabric-react/lib/Panel';
+import { IconButton } from 'office-ui-fabric-react/lib/Button';
+import { HeaderLayer, HeaderLayerTitile, HeaderLayerBrand, HeaderLayerBrandLogo } from '../../styles/styles.components'
+import {intlShape, injectIntl} from "react-intl";
 
-export default class Header extends Component {
+class Header extends Component {
     constructor(props) {
         super(props)
 
         this.state = { 
             showPanel: false,
-            defaulExpanded: (window.location.pathname.substring(3) === '/' ? true : false),
+            defaultExpanded: (window.location.pathname.substring(3) === '/' ? true : false),
             aboutExpanded: (window.location.pathname.substring(3) === '/about/' ? true : false),
             showcasesExpanded: (window.location.pathname.substring(3) === '/experiences/' ? true : false),
             resourcesExpanded: (window.location.pathname.substring(3) === '/resources/' ? true : false),
@@ -35,18 +36,42 @@ export default class Header extends Component {
     };
 
     render() {
+        const intl = this.props.intl
+        const home = intl.formatMessage({ id:'menu_default' })
+        const home1 = intl.formatMessage({ id:'menu_default1' })
+        const home2 = intl.formatMessage({ id:'menu_default2' })
+        const home3 = intl.formatMessage({ id:'menu_default3' })
+        const about = intl.formatMessage({ id:'menu_about' })
+        const about1 = intl.formatMessage({ id:'menu_about1' })
+        const about2 = intl.formatMessage({ id:'menu_about2' })
+        const about3 = intl.formatMessage({ id:'menu_about3' })
+        const showcases = intl.formatMessage({ id:'menu_showcases' })
+        const showcases1 = intl.formatMessage({ id:'menu_showcases1' })
+        const showcases2 = intl.formatMessage({ id:'menu_showcases2' })
+        const showcases3 = intl.formatMessage({ id:'menu_showcases3' })
+        const resources = intl.formatMessage({ id:'menu_resources' })
+        const resources1 = intl.formatMessage({ id:'menu_resources1' })
+        const resources2 = intl.formatMessage({ id:'menu_resources2' })
+        const resources3 = intl.formatMessage({ id:'menu_resources3' })
+        const experiences = intl.formatMessage({ id:'menu_experiences' }) 
+        const experiences1 = intl.formatMessage({ id:'menu_experiences1' }) 
+        const experiences2 = intl.formatMessage({ id:'menu_experiences2' }) 
+        const experiences3 = intl.formatMessage({ id:'menu_experiences3' })   
+        const pages = intl.formatMessage({ id:'menu_title' })   
         return (
             <Headroom>
                 <HeaderLayer>
-                    <HeaderLayerBrand to={'/main'}>
+                    <HeaderLayerBrand to={'/'}>
                         <HeaderLayerBrandLogo 
                             src={Logo} 
-                            width={32} 
-                            height={32}
+                            width={48} 
+                            height={48}
                             alt={'MagData.Science'} >
                         </HeaderLayerBrandLogo>
                     </HeaderLayerBrand>
-                    {this.props.siteTitle}
+                    <HeaderLayerTitile>
+                        {this.props.siteTitle}
+                    </HeaderLayerTitile>
                     <IconButton
                         iconProps={{ iconName: 'ChevronLeftEnd6' }}
                         title="Emoji"
@@ -67,46 +92,46 @@ export default class Header extends Component {
                                 }}
                                 groups={[
                                     {
-                                        name: 'Pages',
+                                        name: pages,
                                         links: [
                                             {
-                                                name: 'Home',
+                                                name: home,
                                                 url: '/',
                                                 links: [
                                                     {
-                                                        name: 'Activity',
+                                                        name: home1,
                                                         url: '#section-1',
                                                         onClick: this._hidePanel,
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: home2,
                                                         url: '#section-2',
                                                         onClick: this._hidePanel
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: home3,
                                                         url: '#section-3',
                                                         onClick: this._hidePanel
                                                     }
                                                 ],
-                                                isExpanded: this.defaulExpanded,
+                                                isExpanded: this.defaultExpanded,
                                             }, 
                                             {
-                                                name: 'About',
+                                                name: about,
                                                 url: '/about',
                                                 links: [
                                                     {
-                                                        name: 'Activity',
+                                                        name: about1,
                                                         url: '#section-1',
                                                         onClick: this._hidePanel,
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: about2,
                                                         url: '#section-2',
                                                         onClick: this._hidePanel
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: about3,
                                                         url: '#section-3',
                                                         onClick: this._hidePanel
                                                     }
@@ -114,21 +139,21 @@ export default class Header extends Component {
                                                 isExpanded: this.aboutExpanded,
                                             }, 
                                             {
-                                                name: 'Showcases',
+                                                name: showcases,
                                                 url: '/showcases',
                                                 links: [
                                                     {
-                                                        name: 'Activity',
+                                                        name: showcases1,
                                                         url: '#section-1',
                                                         onClick: this._hidePanel,
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: showcases2,
                                                         url: '#section-2',
                                                         onClick: this._hidePanel
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: showcases3,
                                                         url: '#section-3',
                                                         onClick: this._hidePanel
                                                     }
@@ -136,21 +161,21 @@ export default class Header extends Component {
                                                 isExpanded: this.showcasesExpanded,
                                             }, 
                                             {
-                                                name: 'Resources',
+                                                name: resources,
                                                 url: '/resources',
                                                 links: [
                                                     {
-                                                        name: 'Activity',
+                                                        name: resources1,
                                                         url: '#section-1',
                                                         onClick: this._hidePanel,
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: resources2,
                                                         url: '#section-2',
                                                         onClick: this._hidePanel
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: resources3,
                                                         url: '#section-3',
                                                         onClick: this._hidePanel
                                                     }
@@ -158,21 +183,21 @@ export default class Header extends Component {
                                                 isExpanded: this.resourcesExpanded,
                                             },
                                             {
-                                                name: 'Experiences',
+                                                name: experiences,
                                                 url: '/experiences',
                                                 links: [
                                                     {
-                                                        name: 'Activity',
+                                                        name: experiences1,
                                                         url: '#section-1',
                                                         onClick: this._hidePanel,
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: experiences2,
                                                         url: '#section-2',
                                                         onClick: this._hidePanel
                                                     },
                                                     {
-                                                        name: 'News',
+                                                        name: experiences3,
                                                         url: '#section-3',
                                                         onClick: this._hidePanel
                                                     }
@@ -193,3 +218,7 @@ export default class Header extends Component {
         )
     }
 }
+Header.propTypes = {
+    intl: intlShape.isRequired
+};
+export default injectIntl(Header)

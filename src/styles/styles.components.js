@@ -26,21 +26,27 @@ export const Container = styled.div`
 export const HeaderLayer = styled.div`
     display: flex;
     flex-flow: row wrap; 
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
     justify-content: space-between;
     padding: 17px 23px 10px 23px; 
-`;
+`
+
+export const HeaderLayerTitile = styled.h1`
+    margin-top:0;
+    margin-botton:0;
+`
 
 export const HeaderLayerBrand = styled(Link)`
+    margin-top:-5px;    
     box-shadow: none;
     display: flex;
     align-items: center;
     flex-flow: column wrap; 
     align-content: center;
-`;
+`
 
 export const HeaderLayerBrandLogo = styled.img`
     align-self:center;
     margin-bottom: 0;
-`;
+`

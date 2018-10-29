@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ChoiceGroup } from 'office-ui-fabric-react/lib/ChoiceGroup';
+import {intlShape, injectIntl} from "react-intl";
 
-export default class Language extends Component {
+class Language extends Component {
     static contextTypes = {
         language: PropTypes.object,
     }
@@ -19,6 +20,8 @@ export default class Language extends Component {
     }
 
     render() {
+        const intl = this.props.intl
+        const label = intl.formatMessage({ id:'menu_language' })
         const { language } = this.context
         const { languages } = language
         const { value } = this.state
@@ -29,7 +32,7 @@ export default class Language extends Component {
 
         return (
             <ChoiceGroup
-                label="Pick one icon"
+                label={label}
                 selectedKey={value}
                 options={ 
                     languages.map( 
@@ -65,3 +68,7 @@ export default class Language extends Component {
         })
     }
 }
+Language.propTypes = {
+    intl: intlShape.isRequired
+};
+export default injectIntl(Language)

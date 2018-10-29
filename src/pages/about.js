@@ -1,20 +1,13 @@
 import React from 'react'
-import { FormattedMessage as M } from 'react-intl'
-import { withIntl, Link } from '../i18n'
+//import { FormattedMessage as M } from 'react-intl'
+//, Link
+import { withIntl } from '../i18n'
 import Layout from '../components/layout/layout'
-
+import TimeLine from '../components/timeLine/timeLine'
 export default withIntl(
     () => (
         <Layout>
-            <h1>
-                <M id="hello" />
-            </h1>
-            <p>
-                <M id="welcome2" />
-            </p>
-            <Link to="/">
-                <M id="goback" />
-            </Link>
+            <TimeLine />
         </Layout>
     )
 )

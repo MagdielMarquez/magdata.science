@@ -3,11 +3,15 @@ import Helmet from 'react-helmet'
 import { injectIntl } from 'react-intl'
 import Header from './headerSideBarMenu'
 import { initializeIcons } from '@uifabric/icons';
+import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { Customizer } from 'office-ui-fabric-react';
+import theme from './theme'
 initializeIcons();
 
 export default injectIntl(
     ({ children, intl }) => (
-        <div>
+        <Customizer {...theme}>
+        <Fabric>
             <Helmet
                 title={intl.formatMessage({ id: 'title' })}
                 meta={[
@@ -29,6 +33,7 @@ export default injectIntl(
             >
                 {children}
             </div>
-        </div>
+            </Fabric>
+        </Customizer>
     )
 )
