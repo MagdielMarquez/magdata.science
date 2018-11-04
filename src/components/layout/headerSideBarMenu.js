@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import Language from './language'
-import Headroom from 'react-headroom'
 import Scrollspy from 'react-scrollspy'
-import Logo from '../../images/magdatascience.svg'
+import Logo from '../../images/logos/magdatascience.svg'
 import { Nav } from 'office-ui-fabric-react/lib/Nav'
 import { Panel } from 'office-ui-fabric-react/lib/Panel';
 import { IconButton } from 'office-ui-fabric-react/lib/Button';
-import { HeaderLayer, HeaderLayerTitile, HeaderLayerBrand, HeaderLayerBrandLogo } from '../../styles/styles.components'
+import { Head, HeaderLayer, HeaderLayerTitile, HeaderLayerBrand, HeaderLayerBrandLogo } from '../../styles/styles.components'
 import {intlShape, injectIntl} from "react-intl";
 
 class Header extends Component {
@@ -37,29 +36,29 @@ class Header extends Component {
 
     render() {
         const intl = this.props.intl
-        const home = intl.formatMessage({ id:'menu_default' })
-        const home1 = intl.formatMessage({ id:'menu_default1' })
-        const home2 = intl.formatMessage({ id:'menu_default2' })
-        const home3 = intl.formatMessage({ id:'menu_default3' })
-        const about = intl.formatMessage({ id:'menu_about' })
-        const about1 = intl.formatMessage({ id:'menu_about1' })
-        const about2 = intl.formatMessage({ id:'menu_about2' })
-        const about3 = intl.formatMessage({ id:'menu_about3' })
-        const showcases = intl.formatMessage({ id:'menu_showcases' })
-        const showcases1 = intl.formatMessage({ id:'menu_showcases1' })
-        const showcases2 = intl.formatMessage({ id:'menu_showcases2' })
-        const showcases3 = intl.formatMessage({ id:'menu_showcases3' })
-        const resources = intl.formatMessage({ id:'menu_resources' })
-        const resources1 = intl.formatMessage({ id:'menu_resources1' })
-        const resources2 = intl.formatMessage({ id:'menu_resources2' })
-        const resources3 = intl.formatMessage({ id:'menu_resources3' })
-        const experiences = intl.formatMessage({ id:'menu_experiences' }) 
-        const experiences1 = intl.formatMessage({ id:'menu_experiences1' }) 
-        const experiences2 = intl.formatMessage({ id:'menu_experiences2' }) 
-        const experiences3 = intl.formatMessage({ id:'menu_experiences3' })   
-        const pages = intl.formatMessage({ id:'menu_title' })   
+        const home = intl.formatMessage({ id:'menu_default', defaultMessage:"Hola" })
+        const home1 = intl.formatMessage({ id:'menu_default1', defaultMessage:"Hola" })
+        const home2 = intl.formatMessage({ id:'menu_default2', defaultMessage:"Hola" })
+        const home3 = intl.formatMessage({ id:'menu_default3', defaultMessage:"Hola" })
+        const about = intl.formatMessage({ id:'menu_about', defaultMessage:"Hola" })
+        const about1 = intl.formatMessage({ id:'menu_about1', defaultMessage:"Hola" })
+        const about2 = intl.formatMessage({ id:'menu_about2', defaultMessage:"Hola" })
+        const about3 = intl.formatMessage({ id:'menu_about3', defaultMessage:"Hola" })
+        const showcases = intl.formatMessage({ id:'menu_showcases', defaultMessage:"Hola" })
+        const showcases1 = intl.formatMessage({ id:'menu_showcases1', defaultMessage:"Hola" })
+        const showcases2 = intl.formatMessage({ id:'menu_showcases2', defaultMessage:"Hola" })
+        const showcases3 = intl.formatMessage({ id:'menu_showcases3', defaultMessage:"Hola" })
+        const resources = intl.formatMessage({ id:'menu_resources', defaultMessage:"Hola" })
+        const resources1 = intl.formatMessage({ id:'menu_resources1', defaultMessage:"Hola" })
+        const resources2 = intl.formatMessage({ id:'menu_resources2', defaultMessage:"Hola" })
+        const resources3 = intl.formatMessage({ id:'menu_resources3', defaultMessage:"Hola" })
+        const experiences = intl.formatMessage({ id:'menu_experiences', defaultMessage:"Hola" }) 
+        const experiences1 = intl.formatMessage({ id:'menu_experiences1', defaultMessage:"Hola" }) 
+        const experiences2 = intl.formatMessage({ id:'menu_experiences2', defaultMessage:"Hola" }) 
+        const experiences3 = intl.formatMessage({ id:'menu_experiences3', defaultMessage:"Hola" })   
+        const pages = intl.formatMessage({ id:'menu_title', defaultMessage:"Hola" })   
         return (
-            <Headroom>
+            <Head>
                 <HeaderLayer>
                     <HeaderLayerBrand to={'/'}>
                         <HeaderLayerBrandLogo 
@@ -214,7 +213,7 @@ class Header extends Component {
                         </Scrollspy>
                     </div>
                 </Panel>
-            </Headroom>
+            </Head>
         )
     }
 }

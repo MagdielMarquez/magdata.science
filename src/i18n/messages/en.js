@@ -2,7 +2,7 @@ module.exports = {
     title: 'Gatsby English',
     label: 'Without a width or height specified, the frame remains at its natural size and the image will not be scaled',
     hello: 'Hi people',
-
+    welcome: 'Welcome', 
     menu_default: 'Home',
     menu_default_1: 'Home 1',
     menu_default_2: 'Home 2',

@@ -21,7 +21,7 @@ class Language extends Component {
 
     render() {
         const intl = this.props.intl
-        const label = intl.formatMessage({ id:'menu_language' })
+        const label = intl.formatMessage({ id:'menu_language', defaultMessage:"Hola" })
         const { language } = this.context
         const { languages } = language
         const { value } = this.state

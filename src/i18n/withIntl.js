@@ -38,7 +38,7 @@ export default ComposedComponent => {
             const messages = require(`./messages/${locale}.js`) // eslint-disable-line
 
             return (
-                <IntlProvider locale={locale} messages={messages}>
+                <IntlProvider defaultLocale={'en'} locale={locale} messages={messages}>
                     <ComposedComponent {...this.props} />
                 </IntlProvider>
             )

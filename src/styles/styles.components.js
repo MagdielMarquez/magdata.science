@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from '../i18n'
+import Headroom from 'react-headroom'
 
 // Header component
 export const Nav = styled.div`
@@ -23,6 +24,11 @@ export const Container = styled.div`
   padding-top: 0;
 `
 //header...
+
+export const Head = styled(Headroom)`
+    position: relative;
+    z-index: 3;
+`
 export const HeaderLayer = styled.div`
     display: flex;
     flex-flow: row wrap; 
@@ -43,10 +49,29 @@ export const HeaderLayerBrand = styled(Link)`
     display: flex;
     align-items: center;
     flex-flow: column wrap; 
-    align-content: center;
 `
-
 export const HeaderLayerBrandLogo = styled.img`
     align-self:center;
     margin-bottom: 0;
 `
+export const Welcome = styled.div`
+    position: relative;
+    color: #fff;
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    z-index: 2;
+`
+export const WelcomeTitle = styled.h2`
+    margin-top:70px;
+    position: absolute;
+    z-index: 3;
+`
+export const Breadcrumb = styled.div`
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    z-index: 1;
+`
+    
+//    z-index: 1; 

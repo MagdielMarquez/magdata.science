@@ -15,7 +15,7 @@ export default injectIntl(
             <Helmet
                 title={intl.formatMessage({ id: 'title' })}
                 meta={[
-                    { name: 'description', content: intl.formatMessage({ id: 'welcome' }) },
+                    { name: 'description', content: intl.formatMessage({ id: 'welcome', defaultMessage:"Hola"  }) },
                     {
                         name: 'keywords',
                         content: 'gatsby, i18n, react-intl, multi language, localization',
@@ -23,17 +23,18 @@ export default injectIntl(
                 ]}
             />
             <Header siteTitle={intl.formatMessage({ id: 'title' })} />
-            <div
-                style={{
-                    margin: '0 auto',
-                    maxWidth: 960,
-                    padding: '0px 1.0875rem 1.45rem',
-                    paddingTop: 0,
-                }}
-            >
+            <div>
                 {children}
             </div>
             </Fabric>
         </Customizer>
     )
 )
+/**
+                style={{
+                    margin: '0 auto',
+                    maxWidth: 960,
+                    padding: '0px 1.0875rem 1.45rem',
+                    paddingTop: 0,
+                }}
+ */

@@ -2,7 +2,7 @@ module.exports = {
     title: 'Gatsby Español',
     hello: 'Hola persona',
     label: 'Sin una anchura o altura especificada, el marco permanece en su tamaño natural y la imagen no se escalará',
-
+    welcome: 'Bienvenidos',
     menu_default: 'Inicio',
     menu_default_1: 'Inicio 1',
     menu_default_2: 'Inicio 2',
