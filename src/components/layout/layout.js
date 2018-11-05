@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { injectIntl } from 'react-intl'
-import Header from './headerSideBarMenu'
+//import Header from './headerSideBarMenu'
+import Header from './header'
 import { initializeIcons } from '@uifabric/icons';
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 import { Customizer } from 'office-ui-fabric-react';

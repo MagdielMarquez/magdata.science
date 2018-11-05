@@ -1,8 +1,8 @@
 import React from 'react'
 import TextLoop from 'react-text-loop';
-import { Image } from 'office-ui-fabric-react/lib/Image'
 import Laucher from '../../images/launching.jpg'
-import {WelcomeTitle, Welcome} from '../../styles/styles.components'
+import { Image } from 'office-ui-fabric-react/lib/Image'
+import { Welcome, WelcomeButton } from '../../styles/styles.components'
 
 export default () => (
     <Welcome>
@@ -13,13 +13,22 @@ export default () => (
             height={window.innerHeight-71}
             
         />
-        <WelcomeTitle>
+        <h2>
             <TextLoop>
-                <span>First item</span>
-                <span>Second item</span>
-                <div>Third item</div>
+                <div>First item </div>
+                <div>Second item </div>
+                <div>Third item </div>
             </TextLoop> 
-            and something else.
-        </WelcomeTitle>
+                <span> and something else.</span>
+            <br/>
+            <WelcomeButton 
+                data-automation-id="test"
+                iconProps={{ iconName: 'AddFriend' }}
+                ariaDescription="This is aria description used for screen reader."
+                href="/contact"
+            >
+                Create account
+            </WelcomeButton>        
+        </h2>
     </Welcome>
 )

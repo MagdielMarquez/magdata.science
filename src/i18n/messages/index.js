@@ -6,6 +6,7 @@ const localeData = [
   
 module.exports = {
     localeData,
+    defaulLocale: 'en',
     languages: [
         { value: 'en', text: 'English' },
         { value: 'es', text: 'Español' },
