@@ -3,6 +3,7 @@ import TextLoop from 'react-text-loop';
 import Laucher from '../../images/launching.jpg'
 import { Image } from 'office-ui-fabric-react/lib/Image'
 import { Welcome, WelcomeButton } from '../../styles/styles.components'
+//import PosterRest from './posterRest'
 
 export default () => (
     <Welcome>
@@ -32,3 +33,6 @@ export default () => (
         </h2>
     </Welcome>
 )
+
+// <span> and something else.</span>
+//<PosterRest />

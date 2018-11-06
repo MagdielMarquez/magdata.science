@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { Panel } from 'office-ui-fabric-react/lib/Panel';
-import Logo from '../../images/logos/magdatascience.svg'
-import { IconButton } from 'office-ui-fabric-react/lib/Button';
 import SidebarMenu from './sidebarMenu'
+import Logo from '../../images/logos/magdatascience.svg'
+import { Panel } from 'office-ui-fabric-react/lib/Panel'
+import { IconButton } from 'office-ui-fabric-react/lib/Button'
 import { Head, HeaderLayer, HeaderLayerBrand } from '../../styles/styles.components'
 
 export default class Header extends Component {
@@ -23,29 +23,29 @@ export default class Header extends Component {
         return (
             <Head>
                 <HeaderLayer>
-                    <HeaderLayerBrand to={'/'}>
+                    <HeaderLayerBrand to={ '/' }>
                         <img 
-                            src={Logo} 
-                            width={48} 
-                            height={48}
-                            alt={'MagData.Science'} >
+                            src={ Logo } 
+                            width={ 48 } 
+                            height={ 48 }
+                            alt={ 'MagData.Science' } >
                         </img>
                     </HeaderLayerBrand>
                     <h1>
-                        {this.props.siteTitle}
+                        { this.props.siteTitle }
                     </h1>
                     <IconButton
                         iconProps={{ iconName: 'ChevronLeftEnd6' }}
                         title="Emoji"
                         ariaLabel="Emoji"
-                        onClick={this._showPanel} 
-                        />
+                        onClick={ this._showPanel } 
+                    />
                 </HeaderLayer>
                 <Panel
-                    isOpen={this.state.showPanel}
-                    isLightDismiss={true}
-                    onDismiss={this._hidePanel}
-                    >
+                    isOpen={ this.state.showPanel }
+                    isLightDismiss={ true }
+                    onDismiss={ this._hidePanel }
+                >
                     <SidebarMenu />
                 </Panel>
             </Head>

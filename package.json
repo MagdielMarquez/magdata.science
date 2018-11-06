@@ -25,6 +25,7 @@
     "react-scrollspy": "^3.3.5",
     "react-text-loop": "^1.1.0",
     "react-vertical-timeline-component": "^2.3.1",
+    "styled-breakpoints": "^4.0.3",
     "styled-components": "^4.0.2"
   }
 }
