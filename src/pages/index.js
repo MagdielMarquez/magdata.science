@@ -5,18 +5,19 @@ import TextLoop from 'react-text-loop';
 import Laucher from '../images/launching.jpg'
 import Layout from '../components/layout/layout'
 import { FormattedMessage as M} from 'react-intl'
-import  Bread  from '../components/index/breadcrumb'
+import  Breadcrumb  from '../components/layout/breadcrumb'
+import  Footer  from '../components/layout/footer'
 import { Image } from 'office-ui-fabric-react/lib/Image'
 import { Label } from 'office-ui-fabric-react/lib/Label'
-import { Breadcrumb, Section } from '../styles/styles.components'
-import { Welcome, WelcomeButton } from '../styles/styles.components'
+import { Bread, Section } from '../styles/styles.components'
+import { Welcome, WelcomeButton, Sub, SubA, SubAReverse, SubB, Readability, ReadabilityReverse, Blockquote, BlockquoteReverse } from '../styles/styles.components'
 
 export default withIntl(
     () => (
         <Layout>
-            <Breadcrumb>
-                <Bread />
-            </Breadcrumb>
+            <Bread>
+                <Breadcrumb page="index"/>
+            </Bread>
             <Section id="section-1">
                 <Welcome>
                     <Image
@@ -46,41 +47,111 @@ export default withIntl(
                 </Welcome>
             </Section>
             <Section id="section-2">
-                <h1>
-                    <M id="index_reason_title" />
-                </h1>
-                <Image
-                    src={ Oil }
-                    alt="Example implementation with no image fit property and only width is specified."
-                />
-                <Label>
-                    <M id="label" />
-                </Label>
+                <Sub>
+                    <SubA>
+                        <h1><M id="index_reason_title" /></h1>
+                        <Readability>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quia voluptatibus reiciendis reprehenderit, aliquid enim expedita, 
+                            eligendi in deleniti eum nostrum deserunt incidunt ex, labore ipsa a earum ut facere iste!
+                        </Readability>
+                        <Readability>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quia voluptatibus reiciendis reprehenderit, aliquid enim expedita, 
+                            eligendi in deleniti eum nostrum deserunt incidunt ex, labore ipsa a earum ut facere iste!
+                        </Readability>
+                        <Blockquote>
+                            <p>
+                                Muy importante
+                            </p>
+                            <footer>
+                                Importante
+                            </footer>
+                        </Blockquote> 
+                    </SubA>
+                    <SubB>
+                        <Image
+                            src={ Oil }
+                            alt="Example implementation with no image fit property and only width is specified."
+                            width={ 300 }
+                            />
+                        <Label>
+                            <M id="label" />
+                        </Label>
+                    </SubB> 
+                </Sub>
             </Section>
             <Section id="section-3">
-                <h1>
-                    <M id="hello" />
-                </h1>
-                <Label>
-                    <M id="label" />
-                </Label>
-                <Image
-                    src="http://placehold.it/780x500"
-                    alt="Example implementation with no image fit property and only width is specified."
-                />
+                <Sub>
+                    <SubB>
+                        <Image
+                            src={ Oil }
+                            alt="Example implementation with no image fit property and only width is specified."
+                            width={ 300 }
+                            />
+                        <Label>
+                            <M id="label" />
+                        </Label>
+                    </SubB> 
+                    <SubAReverse>
+                        <h1><M id="index_reason_title" /></h1>
+                        <ReadabilityReverse>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quia voluptatibus reiciendis reprehenderit, aliquid enim expedita, 
+                            eligendi in deleniti eum nostrum deserunt incidunt ex, labore ipsa a earum ut facere iste!
+                        </ReadabilityReverse>
+                        <ReadabilityReverse>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quia voluptatibus reiciendis reprehenderit, aliquid enim expedita, 
+                            eligendi in deleniti eum nostrum deserunt incidunt ex, labore ipsa a earum ut facere iste!
+                        </ReadabilityReverse>
+                        <BlockquoteReverse>
+                            <p>
+                                Muy importante
+                            </p>
+                            <footer>
+                                Importante
+                            </footer>
+                        </BlockquoteReverse> 
+                    </SubAReverse>
+                </Sub>
             </Section>
             <Section id="section-4">
-                <h1>
-                    <M id="hello" />
-                </h1>
-                <Label>
-                    <M id="label" />
-                </Label>
-                <Image
-                    src="http://placehold.it/780x500"
-                    alt="Example implementation with no image fit property and only width is specified."
-                />
+                <Sub>
+                    <SubA>
+                        <h1><M id="index_reason_title" /></h1>
+                        <Readability>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quia voluptatibus reiciendis reprehenderit, aliquid enim expedita, 
+                            eligendi in deleniti eum nostrum deserunt incidunt ex, labore ipsa a earum ut facere iste!
+                        </Readability>
+                        <Readability>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Quia voluptatibus reiciendis reprehenderit, aliquid enim expedita, 
+                            eligendi in deleniti eum nostrum deserunt incidunt ex, labore ipsa a earum ut facere iste!
+                        </Readability>
+                        <Blockquote>
+                            <p>
+                                Muy importante
+                            </p>
+                            <footer>
+                                Importante
+                            </footer>
+                        </Blockquote> 
+                    </SubA>
+                    <SubB>
+                        <Image
+                            src={ Oil }
+                            alt="Example implementation with no image fit property and only width is specified."
+                            width={ 300 }
+                            />
+                        <Label>
+                            <M id="label" />
+                        </Label>
+                    </SubB> 
+                </Sub>
             </Section>
+            <Footer />
         </Layout>
     )
 )

@@ -1,8 +1,9 @@
 import { Link } from '../i18n'
 import Headroom from 'react-headroom'
 import styled from 'styled-components'
-import { createBreakpoints } from 'styled-breakpoints';
-import { ActionButton } from 'office-ui-fabric-react/lib/Button';
+import { createBreakpoints } from 'styled-breakpoints'
+import { ActionButton } from 'office-ui-fabric-react/lib/Button'
+import { IconButton } from 'office-ui-fabric-react/lib/Button'
 
 /**
  * Above x > something
@@ -20,7 +21,7 @@ export const Head = styled(Headroom)`
     position: relative;
     z-index: 3;
 `
-export const HeaderLayer = styled.div`
+export const HeaderLayer = styled.header`
     display: flex;
     flex-flow: row wrap; 
     align-items: flex-start;
@@ -48,7 +49,6 @@ export const HeaderLayer = styled.div`
         }
     }
 `
-//padding: 17px 23px 10px 23px;
 export const HeaderLayerBrand = styled(Link)`
     margin-top:-5px;    
     box-shadow: none;
@@ -66,28 +66,28 @@ export const Welcome = styled.div`
     display:flex;
     flex-direction: row-reverse;
     align-items: center;
-    z-index: 2;
     h2 {
         width: 650px;
         text-align: right;
         position: absolute;
-        z-index: 3;
+        z-index: 1;
+        padding-right: 19px;
     }
     ${below('sm')} {
         h2 {
-            width: 210px;
+            width: 190px;
             font-size:1.25em;
         }
     }
     ${between('sm','md')} {
         h2 {
-            width: 450px;
+            width: 430px;
             font-size:1.45em;
         }
     }
     ${above('md')} {
         h2 {
-            width: 650px;
+            width: 630px;
         }
     }
 `
@@ -96,11 +96,11 @@ export const WelcomeButton = styled(ActionButton)`
     margin-right:30px;
     color: #ffb74d;
 `
-export const Breadcrumb = styled.div`
+export const Bread = styled.div`
     position: fixed;
     width: 100%;
     top: 0; 
-    z-index: 1;
+    z-index: 2;
     background-color:#e8eaf6 !important;
 `
 export const Blockquote = styled.blockquote`
@@ -112,8 +112,7 @@ export const Blockquote = styled.blockquote`
         margin: 0.200em 0;
     }
     footer {
-        margin-top: 0; 
-        margin-bottom: 0; 
+        margin: 0 auto; 
         font-size: .801em;
         color: #d33c00;
         &:before {
@@ -121,37 +120,157 @@ export const Blockquote = styled.blockquote`
         }
     }
 `
-export const Section = styled.section`
-    & + section {
-        display:flex;
-        margin: 0px auto 0 auto;
-        padding: 75px 10px 0 10px;
-        align-items: center;
-        flex-flow: column wrap; 
+export const BlockquoteReverse = styled.blockquote`
+    padding: 0.539em 0.809em 0.539em 0.809em;
+    margin: 0 0 0.801em;
+    font-size: 1.078em;
+    border-right: 5px solid #ea4300;
+    p {
+        margin: 0.200em 0;
     }
-    ${below('sm')} {
-        & + section {
-            max-width: 300px;
+    footer {
+        margin: 0 auto; 
+        font-size: .801em;
+        color: #d33c00;
+        &:after {
+            content: ' \u2014';
         }
+    }
+`
+export const Section = styled.section`
+    & + section {    
+        width:  98vw;
+        height: 100vh; 
+        display: flex;
+        flex-flow: column nowrap;     
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+`
+export const Sub = styled.div`
+    display: flex;
+    flex-flow: row wrap; 
+    ${below('sm')} {
+        max-width: 300px;
     }
     ${between('sm','md')} {
-        & + section {
-            max-width: 550px;
-        }
+        max-width: 550px;
     }
     ${between('md','lg')} {
-        & + section {
-            max-width: 770px;
-        }
+        max-width: 770px;
     }
     ${above('lg')} {
-        & + section {
-            max-width: 960px;
-        }
+        max-width: 960px;
+    }
+`
+export const SubA = styled.article`
+    flex: 1 1; 
+    display: flex;
+    flex-flow: column nowrap; 
+`
+export const SubAReverse = styled.article`
+    flex: 1 1; 
+    text-align: right;
+    display: flex;
+    flex-flow: column nowrap; 
+`
+export const SubB = styled.aside`
+    flex: 0 0 300px; 
+    display: flex;
+    flex-flow: column nowrap; 
+`
+export const Readability = styled.p`
+    width: 37em;
+    text-align: justify;
+    text-justify: inter-word;
+`
+export const Read = styled.div`
+    width: 37em;
+    text-align: justify;
+    text-justify: inter-word;
+    & h1 {
+        font-size: 28px;
+        margin: 0 0 21px 0;
+    }
+`
+export const CardForm = styled.form`
+    width: 100%;
+    padding: 5px;
+    background-color: #fcdfd3;
+    box-shadow: 0 0 29px 5px #f38a61;
+`
+export const CardFormBlock = styled.div`
+    display: flex;
+    & div { 
+        margin: 0 5px 0 5px;
+        flex: 1 1; 
+    }
+    & label { 
+        margin: 0 5px 0 -7px;
+        flex: 1 1; 
+    }
+    & span div p span { 
+        margin: 0 5px 0 5px;
+    }
+`
+export const IconButtonInfo = styled(IconButton)`
+    height: auto;
+    & div {
+        height: auto;
+    }
+    & div i {
+        font-size: 12px;
+    }
+`
+export const CardFormButton = styled.div`
+    margin: 15px 15px 5px 0;
+    text-align: end;
+    & button {
+        border: none;
+        color: #b23300;
+        background: #ffb74d;
+    }
+    & button:hover {
+        background: #ea4300;
+    }
+`
+export const ReadabilityReverse = styled.p`
+    width: 37em;
+    text-align: justify;
+    text-justify: inter-word;
+    align-self: flex-end;
+`
+export const FooterLayer = styled.footer`
+    color: #fff;
+    width:  98.5vw;
+    height: 497px;
+    display: flex;
+    flex-flow: column nowrap;     
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #24146e;
+`
+export const CardFormMessages = styled.div`
+    margin-top: 37px; 
+`
+export const IconsLinks = styled.a`
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+`
+export const IconsLinksvg = styled.svg`
+    &:hover{
+        fill: #ea4300;
     }
 `
 
 /*
+
+    justify-content: center;
+    align-items: center;
+
 export const BlockquoteFooter = styled(B)`::before
     content: "\2014 \00A0";
 `

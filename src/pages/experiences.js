@@ -4,6 +4,7 @@ import { FormattedMessage as M} from 'react-intl'
 import { withIntl } from '../i18n'
 import { Image } from 'office-ui-fabric-react/lib/Image';
 import { Label } from 'office-ui-fabric-react/lib/Label';
+import  Footer  from '../components/layout/footer'
 
 export default withIntl(
     () => (
@@ -41,6 +42,7 @@ export default withIntl(
                     alt="Example implementation with no image fit property and only width is specified."
                     />
             </section>
+            <Footer />
         </Layout>
     )
 )
